@@ -398,4 +398,4 @@ class PXEAndWakeOnLanDriver(base.BaseDriver):
 class PowerVMDriver(base.BaseDriver):
     def __init__(self):
         self.power = ipmitool.IPMIPower()
-        self.deploy = powervm.DummyDeployMethod()
+        self.deploy = powerVM.DummyDeployMethod()
