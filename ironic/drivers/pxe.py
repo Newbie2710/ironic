@@ -393,3 +393,7 @@ class PXEAndWakeOnLanDriver(base.BaseDriver):
         self.boot = pxe.PXEBoot()
         self.deploy = iscsi_deploy.ISCSIDeploy()
         self.vendor = iscsi_deploy.VendorPassthru()
+        
+class PowerVMDriver(base.BaseDriver):
+    def __init__(self):
+        self.power = ipmitool.IPMIPower();
