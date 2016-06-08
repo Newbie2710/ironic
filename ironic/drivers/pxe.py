@@ -44,6 +44,7 @@ from ironic.drivers.modules.irmc import power as irmc_power
 from ironic.drivers.modules import iscsi_deploy
 from ironic.drivers.modules.msftocs import management as msftocs_management
 from ironic.drivers.modules.msftocs import power as msftocs_power
+from ironic.drivers.modules import powerVM
 from ironic.drivers.modules import pxe
 from ironic.drivers.modules import seamicro
 from ironic.drivers.modules import snmp
@@ -396,4 +397,5 @@ class PXEAndWakeOnLanDriver(base.BaseDriver):
         
 class PowerVMDriver(base.BaseDriver):
     def __init__(self):
-        self.power = ipmitool.IPMIPower();
+        self.power = ipmitool.IPMIPower()
+        self.deploy = powervm.DummyDeployMethod()
